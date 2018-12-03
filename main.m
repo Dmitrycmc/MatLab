@@ -27,6 +27,7 @@ answer2 = Task2([
 ]);
 
 [answer3_count, answer3_maxVal, answer3_minVal] = Task3(15, -3, 3, 0.1);
+answer3 = [answer3_count, answer3_maxVal, answer3_minVal];
 
 answer4_a = Task4([
     -1.32  2.15   7.6
@@ -45,4 +46,6 @@ Task5(@(x) x / 20, 'x/20', 'r-', @(x) exp(x), 'e^x', 'b-.', -2, 2, false);
 
 Task6(-2*pi, @(x) sin(x), 'sin x', 0, @(x) -x.^3, '-x^3', 1, @(x) cos(pi * x), 'cos pi*x', 3*pi);
 
-Task7(@(t) 2 * sin(t) - 2/3 * sin(2*t), '2sin t - 2/3 sin 2t', @(t) 2 * cos(t) - 2/3 * cos(2*t), '2cos t - 2/3 cos 2t', 0, 2*pi);
+Task7(@(t) 2 * sin(t) - 2/3 * sin(2*t), '2sin t - 2/3 sin 2t', @(t) 2 * cos(t) - 2/3 * cos(2*t), '2cos t - 2/3 cos 2t', 0, 2*pi, false);
+
+Task8(@(x, y) sin(x).^2 .* log(y), 'sin^2 x ln y', 0, 2*pi, 0, 10, true);

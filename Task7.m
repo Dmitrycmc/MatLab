@@ -1,11 +1,14 @@
-function fig = Task7(x, strX, y, strY, a, b)
+function fig = Task7(x, strX, y, strY, a, b, animated)
     fig = figure('name', ['Task 7: ', 'x = ', strX, '; ','y = ', strY]);
     
     eps = (b - a) / 1000;
     t = a : eps : b;
     
-    comet(x(t), y(t));
-    
+    if (animated == true)
+        comet(x(t), y(t));
+    else
+        plot(x(t), y(t), 'r-');
+    end
     grid on;
     xlabel('x');
     ylabel('y');
