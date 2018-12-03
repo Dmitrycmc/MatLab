@@ -7,7 +7,7 @@ function fig = Task5(f1, str1, style1, f2, str2, style2, a, b, together)
     
     fig = figure('name', ['Task 5: ', 'y = ', str1, '; ','y = ', str2]);
     
-    if (together == true)
+    if (together)
         plot(x, y1, style1, x, y2, style2);
         formatFigure(str1, str2, '');
     else 
