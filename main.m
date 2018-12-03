@@ -1,3 +1,7 @@
+clear;
+close all;
+clc;
+
 answer1 = Task1([
     -9.8 4.4 1.3
     -5.7 0.1 0.8
@@ -36,7 +40,9 @@ answer4_b = Task4([
     1  1  3
 ], [1 2 4]');
 
-Task5(@(x) sin(x.^2), @(x) cos(x.^2), -pi, pi);
-Task5(@(x) x / 20, @(x) exp(x), -2, 2);
+Task5(@(x) sin(x.^2), 'sin x^2', 'r-', @(x) cos(x.^2), 'cos x^2', 'b-.', -pi, pi, true);
+Task5(@(x) x / 20, 'x/20', 'r-', @(x) exp(x), 'e^x', 'b-.', -2, 2, false);
 
-Task6(-2, @(x) sin(x.^2), 5, @(x) exp(x), 10, @(x) 2*x, 15);
+Task6(-2*pi, @(x) sin(x), 'sin x', 0, @(x) -x.^3, '-x^3', 1, @(x) cos(pi * x), 'cos pi*x', 3*pi);
+
+Task7(@(t) 2 * sin(t) - 2/3 * sin(2*t), '2sin t - 2/3 sin 2t', @(t) 2 * cos(t) - 2/3 * cos(2*t), '2cos t - 2/3 cos 2t', 0, 2*pi);
