@@ -11,16 +11,10 @@ function [fig1, fig2] = Task8(f, str, ax, bx, ay, by, together)
         fig1 = figure('name', ['Task 8: ', 'z = ', str]);
         colormap summer;
         
-        subplot(2, 2, 1);
+        subplot(2, 1, 1);
         mesh(x, y, z);
         
-        subplot(2, 2, 2);
-        surf(x, y, z);
-        
-        subplot(2, 2, 3);
-        surf(x, y, z);
-        
-        subplot(2, 2, 4);
+        subplot(2, 1, 2);
         surf(x, y, z);
     else
         fig1 = figure('name', ['Task 8 (mesh): ', 'z = ', str]);
