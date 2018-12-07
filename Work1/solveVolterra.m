@@ -5,7 +5,7 @@ function [X, Y, loops] = solveVolterra(K, f, lambda, a, b, y0, N, eps)
     loops = 0;
     while true
         newY = rightSide(X, oldY, K, f, lambda);
-        diff = norm(newY - oldY, inf);
+        diff = normC(newY, oldY);
 
         loops = loops + 1;
         if diff < eps 

@@ -14,22 +14,22 @@ step = 0.01;            % result functions step
 f = @(x) x;
 K = @(x, t) 2 * sin(x - t);
 
-
 tic;
     mutation = (rand() * 2 - 1) * beta;
     grid = a : step : b;
     K_mutated = @(x, t) K(x, t) + mutation;
     
-    % get interp solution
-    [Y_interp, loops, optimalDegree] = getSolution(K, f, lambda, a, b, f, N, eps, grid);
-
     % get exact solution
     Y_exact = exactSolution(grid);
 
     % get interp solution
-    [Y_mutated, loops, optimalDegree] = getSolution(K_mutated, f, lambda, a, b, f, N, eps, grid);
-
-    plot(grid, Y_interp, grid, Y_exact, grid, Y_mutated);
-
+    [Y_interp, loops, optimalDegree] = getSolution(K, f, lambda, a, b, f, N, eps, grid);
+    discrepancy_interp = normC(Y_exact, Y_interp);
     
+    % get interp solution
+    [Y_mutated, loops, optimalDegree] = getSolution(K_mutated, f, lambda, a, b, f, N, eps, grid);
+    discrepancy_mutated = normC(Y_exact, Y_mutated);
+    
+    % draw plots
+    fig = drawPlot(grid, Y_exact, Y_interp, Y_mutated);
 toc;
