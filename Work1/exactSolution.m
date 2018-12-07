@@ -1,5 +1,4 @@
 function y = exactSolution(x)
-    y = 2 * x;
+    y = exp(x) - exp(-x) - x;
 end
-% todo Implement
 
