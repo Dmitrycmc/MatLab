@@ -22,15 +22,11 @@ tic;
 X = thinOut(X);
 Y = thinOut(Y);
 
-polynoms = {};
-nevyazki = zeros(1, 10);
-grid = a : 0.1: b;
-
-for i = 1 : 10
-   p = polyfit(X, Y, i - 1);
-   polynoms{i} = polyval(p, grid);
-   nevyazki(i) = 
-end
-
+step = 0.01;
+grid = a : step : b;
+[Y_interp, optimalDegree] = getOptimalPolynom(X, Y, K, f, lambda, grid);
+Y_exact = exactSolution(grid);
 
 toc;
+
+plot(grid, Y_interp, grid, Y_exact);

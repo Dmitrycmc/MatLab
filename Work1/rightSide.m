@@ -1,4 +1,4 @@
-function res = solveVolterraIter(X, oldY, K, f, lambda)
+function res = rightSide(X, oldY, K, f, lambda)
     len = length(X);
     newY = zeros(1, len);
     h = X(2) - X(1);
