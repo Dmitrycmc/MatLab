@@ -2,7 +2,8 @@ clear;
 close all;
 clc;
   
-fileName = '1.bmp';
+L = 255;
+fileName = 'at.bmp';
 
 % Origin & gray
 fig1 = figure('name', 'Origin & gray');   
@@ -61,5 +62,11 @@ edgesImage = edge(grayImage, 'Sobel');
 imshow(edgesImage), title('Edges');
 
 % Metricks
-MSE(grayImage, medianFilteredImage)
-PSNR(grayImage, medianFilteredImage, 255)
+MSE(grayImage, medianFilteredImage, L)
+
+PSNR(grayImage, medianFilteredImage, L)
+
+SSIM(grayImage, medianFilteredImage, L)
+
+MSSIM(grayImage, medianFilteredImage, L)
+
