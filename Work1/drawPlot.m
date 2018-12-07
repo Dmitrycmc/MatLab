@@ -1,5 +1,5 @@
 function fig = drawPlot(grid, Y_exact, Y_interp, Y_mutated)
-    fig = figure('name', 'Plots');   
+    fig = figure('name', 'Plot');   
     plot(grid, Y_exact, 'b-', grid, Y_interp, 'g-', grid, Y_mutated, 'r-');
     
     % set font family

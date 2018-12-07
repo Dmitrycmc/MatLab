@@ -63,4 +63,3 @@ imshow(edgesImage), title('Edges');
 % Metricks
 MSE(grayImage, medianFilteredImage)
 PSNR(grayImage, medianFilteredImage, 255)
-
