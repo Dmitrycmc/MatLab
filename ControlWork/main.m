@@ -23,7 +23,7 @@ Y_exact = calcExactSolve(RO, T, a, A, ro0);
 m = 1;
 pdefun = @(x, t, u, dudx) deal(1, a^2 * dudx, A * t);
 icfun = @(x) 0;
-bcfun = @(xl,ul,xr,ur,t) deal(0,1/a^2, ur, 0);  %pl ql pr qr);
+bcfun = @(xl,ul,xr,ur,t) deal(0,1/a^2, ur, 0);
  
 Y_num = pdepe(m,pdefun,icfun,bcfun,ROmesh,Tmesh);
 
